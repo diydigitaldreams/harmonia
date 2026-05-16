@@ -1,0 +1,23 @@
+1
+00:00:00,000 --> 00:00:25,000
+This is Harmonia, a proof-of-concept built for the IBM Bob Hackathon. The theme is turn idea into impact faster, and Harmonia focuses on messy developer support chatter.
+
+2
+00:00:25,000 --> 00:01:20,000
+In hackathons and developer communities, useful signals get buried inside Discord threads, GitHub comments, Slack messages, and support channels. Reports are vague, duplicated, emotional, or missing context. Before developers can act, someone has to read everything, decide what matters, group related issues, and rewrite the problem into engineering language.
+
+3
+00:01:20,000 --> 00:02:15,000
+Harmonia closes that gap. It takes synthetic developer-support messages and turns them into structured engineering work. It analyzes messages, groups related reports into clusters, assigns issue type and urgency, and generates ticket-ready summaries. The goal is not just sentiment analysis. The goal is moving from community noise to actionable development work faster.
+
+4
+00:02:15,000 --> 00:03:10,000
+IBM Bob was used as the primary AI development partner. The work was broken into Bob-led tasks: planning the architecture, implementing the triage schema, building the ticket generation workflow, reviewing the app, and preparing the project for submission. The exported Bob sessions are included in bob_sessions for judge review.
+
+5
+00:03:10,000 --> 00:04:20,000
+Here, the app is running locally. Harmonia loads a synthetic dataset with no private client data, no social media scrape, no secrets, and no personally identifying information. Once loaded, Harmonia identifies issue category, estimates urgency, groups related reports, and creates a clearer picture of what the development team should focus on. Ambiguous or low-confidence messages can be routed for human review.
+
+6
+00:04:20,000 --> 00:04:55,000
+The result is a clean engineering artifact: title, summary, impact, related evidence, next steps, and testing guidance. Harmonia turns discord into harmony. Built with IBM Bob as the primary development partner, it demonstrates the hackathon theme clearly: turning an idea into impact faster.

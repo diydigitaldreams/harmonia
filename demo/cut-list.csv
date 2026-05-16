@@ -1,7 +1,7 @@
 clip,start,end,label
-1,00:00:00,00:00:45,opening-bob-repo
-2,01:19:00,01:20:00,app-visible
-3,01:20:00,01:23:00,bob-task-work
-4,01:30:00,01:34:00,review-testing
-5,01:34:00,01:40:30,final-implementation
-6,01:41:00,01:42:00,session-export-proof
+1,00:00:00,00:00:25,opening-bob-repo
+2,01:19:00,01:19:55,app-visible
+3,01:20:00,01:20:55,bob-task-work
+4,01:30:00,01:30:55,review-testing
+5,01:34:00,01:35:10,final-implementation
+6,01:41:00,01:41:35,session-export-proof

@@ -2,7 +2,7 @@
 
 **Turn developer support chatter into repo-aware engineering action**
 
-Harmonia is a proof-of-concept project for the IBM Bob Hackathon that demonstrates how messy developer-support signals can be transformed into structured, actionable engineering work.
+Harmonia is a proof-of-concept project for the IBM Bob Hackathon 2026 that demonstrates how messy developer-support signals can be transformed into structured, actionable engineering work.
 
 ## Hackathon Theme
 
@@ -13,7 +13,7 @@ Harmonia focuses on the messy middle between an idea/problem being reported and 
 ## What Harmonia Does
 
 1. **Loads synthetic developer-support chatter** - Sample messages representing common support issues
-2. **Detects issue clusters** - Groups related messages using similarity analysis
+2. **Detects issue clusters** - Groups related messages using transparent similarity analysis
 3. **Assigns metadata** - Category, severity, confidence score, and review status for each cluster
 4. **Generates IBM Bob IDE task prompts** - Ready-to-use prompts for implementation
 5. **Produces engineering-ready output:**
@@ -21,14 +21,16 @@ Harmonia focuses on the messy middle between an idea/problem being reported and 
    - Evidence from support messages
    - Likely affected files
    - Acceptance criteria
-   - Test plan (unit, integration, manual)
+   - Test plan
    - Documentation update plan
 
 ## Demo Flow
 
+```text
+Synthetic Messages -> Clustering -> Analysis -> Ticket Generation -> Bob IDE Prompt
 ```
-Synthetic Messages → Clustering → Analysis → Ticket Generation → Bob IDE Prompt
-```
+
+The proof-of-concept is intentionally transparent: the clustering and scoring logic are simple enough for judges to inspect while still demonstrating the full support-to-engineering handoff.
 
 ## Quick Start
 
@@ -37,23 +39,18 @@ Synthetic Messages → Clustering → Analysis → Ticket Generation → Bob IDE
 - Node.js 18+ and npm
 - Modern web browser
 
-For detailed setup instructions and troubleshooting, see [`docs/setup.md`](docs/setup.md)
+For detailed setup instructions and troubleshooting, see [`docs/setup.md`](docs/setup.md).
 
 ### Installation
 
 ```bash
-# Clone the repository
 git clone https://github.com/diydigitaldreams/harmonia.git
 cd harmonia
-
-# Install dependencies
 npm install
-
-# Start development server
 npm run dev
 ```
 
-The app will open at `http://localhost:5173`
+The app will open at `http://localhost:5173`.
 
 ### Build for Production
 
@@ -93,9 +90,21 @@ Bob was used for:
 
 All relevant Bob task session exports are stored in:
 
-```
+```text
 bob_sessions/
 ```
+
+### Expected Bob Session Evidence
+
+The final submission should include exported Bob task sessions such as:
+
+```text
+bob_sessions/01-plan-mode-session.md
+bob_sessions/02-code-mode-session.md
+bob_sessions/03-review-mode-session.md
+```
+
+Additional Bob prompt/refinement exports are welcome when they help show the development workflow.
 
 ### How the App Uses Bob
 
@@ -114,32 +123,28 @@ These prompts can be copied and used directly in IBM Bob IDE to implement soluti
 
 This repository uses **synthetic English-language developer-support data only**.
 
-It does NOT include:
-- Real Discord logs or Slack exports
-- Social media data
-- Client data or confidential company data
-- Personal information or PII
-- API keys, secrets, or credentials
+It does not include real chat exports, client material, private user information, tokens, keys, or credentials.
 
 See [`docs/data-compliance-note.md`](docs/data-compliance-note.md) for details.
 
 ## Project Structure
 
-```
+```text
 harmonia/
 ├── src/
-│   ├── types/           # TypeScript type definitions
-│   ├── data/            # Synthetic dataset
-│   ├── utils/           # Core logic (clustering, scoring, etc.)
-│   ├── App.tsx          # Main React component
-│   ├── main.tsx         # Entry point
-│   └── index.css        # Styles
-├── docs/                # Documentation
+│   ├── types/
+│   ├── data/
+│   ├── utils/
+│   ├── App.tsx
+│   ├── main.tsx
+│   └── index.css
+├── docs/
 │   ├── mvp-plan.md
 │   ├── architecture.md
 │   ├── bob-integration.md
+│   ├── manual-test-report.md
 │   └── ...
-├── bob_sessions/        # IBM Bob IDE session exports
+├── bob_sessions/
 └── package.json
 ```
 
@@ -148,7 +153,7 @@ harmonia/
 - **Frontend:** React 18 + TypeScript
 - **Build Tool:** Vite
 - **Styling:** Tailwind CSS
-- **Processing:** Client-side JavaScript (no backend)
+- **Processing:** Client-side JavaScript
 - **AI Partner:** IBM Bob IDE
 
 ## Key Features
@@ -174,12 +179,12 @@ harmonia/
 ### Ticket Generation
 - Engineering-ready ticket format
 - Category-specific acceptance criteria
-- Comprehensive test plans
+- Test plans
 - Documentation update plans
 
 ### Bob Prompt Generation
 - Context-aware prompt creation
-- Mode selection (Plan/Code/Review)
+- Mode selection
 - Constraint specification
 - Expected output definition
 
@@ -192,20 +197,22 @@ harmonia/
 - [`docs/data-compliance-note.md`](docs/data-compliance-note.md) - Data compliance policy
 - [`docs/synthetic-dataset-method.md`](docs/synthetic-dataset-method.md) - Dataset design approach
 - [`docs/judging-map.md`](docs/judging-map.md) - Hackathon evaluation alignment
+- [`docs/manual-test-report.md`](docs/manual-test-report.md) - Manual validation checklist
 
 ## Demo Video
 
-[Link to demo video - under 5 minutes]
+Raw process recording completed. Final submission video should be edited down to the required pitch/demo length before submission.
 
 ## Submission Artifacts
 
 - ✅ Public GitHub repository
 - ✅ Working proof-of-concept
 - ✅ Synthetic dataset only
-- ✅ IBM Bob IDE session exports
+- ✅ IBM Bob IDE session exports directory
 - ✅ Comprehensive documentation
-- ⏳ Demo video (in progress)
-- ⏳ Written statement (in progress)
+- ✅ Raw build/process recording captured
+- ⏳ Final edited demo video
+- ⏳ Written statement
 
 ## Business Value
 
@@ -226,13 +233,13 @@ Harmonia addresses a real problem: engineering teams lose time translating vague
 
 ## Originality
 
-Harmonia is not just sentiment analysis or a chatbot. It's a **signal-to-software workflow** that bridges the gap between scattered human feedback and structured engineering action.
+Harmonia is not just sentiment analysis or a chatbot. It is a **signal-to-software workflow** that bridges the gap between scattered human feedback and structured engineering action.
 
 ## Future Enhancements
 
 - Real-time message streaming
 - Machine learning-based clustering
-- Integration with issue trackers (Jira, GitHub Issues)
+- Integration with issue trackers
 - Multi-language support
 - Team collaboration features
 - Historical trend analysis
@@ -240,15 +247,15 @@ Harmonia is not just sentiment analysis or a chatbot. It's a **signal-to-softwar
 
 ## License
 
-MIT License - See [LICENSE](LICENSE) file
+MIT License - See [LICENSE](LICENSE) file.
 
 ## Contributing
 
-This is a hackathon proof-of-concept. Contributions, issues, and feature requests are welcome!
+This is a hackathon proof-of-concept. Contributions, issues, and feature requests are welcome.
 
 ## Acknowledgments
 
-- Built for the IBM Bob Hackathon 2024
+- Built for the IBM Bob Hackathon 2026
 - Developed with IBM Bob IDE as the primary AI partner
 - Theme: "Turn idea into impact faster"
 

@@ -3,11 +3,14 @@ set -euo pipefail
 
 # Harmonia demo video builder
 #
-# Usage:
+# Usage without voice-over:
+#   bash demo/make-demo.sh path/to/raw-demo.webm
+#
+# Usage with voice-over:
 #   bash demo/make-demo.sh path/to/raw-demo.webm path/to/voiceover.wav
 #
 # Optional:
-#   CUT_LIST=demo/cut-list.csv OUTPUT=harmonia-demo-final.mp4 bash demo/make-demo.sh raw.webm voiceover.wav
+#   CUT_LIST=demo/cut-list.csv OUTPUT=harmonia-demo-final.mp4 bash demo/make-demo.sh raw.webm
 #
 # Requirements:
 #   ffmpeg
@@ -26,8 +29,8 @@ WORKDIR="${WORKDIR:-demo/build}"
 CLIP_LIST="$WORKDIR/clips.txt"
 SILENT_CUT="$WORKDIR/silent-cut.mp4"
 
-if [[ -z "$RAW_VIDEO" || -z "$VOICEOVER" ]]; then
-  echo "Usage: bash demo/make-demo.sh path/to/raw-demo.webm path/to/voiceover.wav"
+if [[ -z "$RAW_VIDEO" ]]; then
+  echo "Usage: bash demo/make-demo.sh path/to/raw-demo.webm [path/to/voiceover.wav]"
   exit 1
 fi
 
@@ -42,7 +45,7 @@ if [[ ! -f "$RAW_VIDEO" ]]; then
   exit 1
 fi
 
-if [[ ! -f "$VOICEOVER" ]]; then
+if [[ -n "$VOICEOVER" && ! -f "$VOICEOVER" ]]; then
   echo "Error: voice-over file not found: $VOICEOVER"
   exit 1
 fi
@@ -88,6 +91,13 @@ fi
 pushd "$WORKDIR" >/dev/null
 ffmpeg -y -f concat -safe 0 -i "$(basename "$CLIP_LIST")" -c copy "$(basename "$SILENT_CUT")"
 popd >/dev/null
+
+if [[ -z "$VOICEOVER" ]]; then
+  cp "$SILENT_CUT" "$OUTPUT"
+  echo "Done: $OUTPUT"
+  echo "Note: exported silent rough cut. Add voice-over later by rerunning with a voice-over file."
+  exit 0
+fi
 
 ffmpeg -y \
   -i "$SILENT_CUT" \

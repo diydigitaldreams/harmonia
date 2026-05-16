@@ -1,26 +1,35 @@
 # IBM Bob Session Reports
 
-This folder is reserved for exported IBM Bob IDE task session reports and task session consumption summary screenshots.
+This folder contains the exported IBM Bob IDE task session reports used as evidence for the Harmonia hackathon build.
 
-For the IBM Bob Hackathon, Bob IDE is expected to be the primary AI development partner. Relevant Bob sessions should be exported and placed here for judging.
+For the IBM Bob Hackathon, IBM Bob IDE is the primary AI development partner. These exports document how Bob was used to plan, implement, review, and refine the proof-of-concept.
 
-## Expected Contents
-
-Planned examples:
+## Included Session Exports
 
 ```text
 bob_sessions/
   01-plan-mode-session.md
-  01-plan-mode-summary.png
   02-code-mode-session.md
-  02-code-mode-summary.png
-  03-review-and-docs-session.md
-  03-review-and-docs-summary.png
+  03-review-mode-session.md
+  04-bob-prompt-generation-session.md
+  05-bob-refinement-session.md
 ```
+
+## Session Purpose
+
+| File | Purpose |
+| --- | --- |
+| `01-plan-mode-session.md` | Initial Bob-led planning for the Harmonia MVP, architecture, workflow, and judging alignment. |
+| `02-code-mode-session.md` | Bob-led implementation of the React/TypeScript proof-of-concept. |
+| `03-review-mode-session.md` | Bob-assisted review and polish pass for submission readiness. |
+| `04-bob-prompt-generation-session.md` | Session focused on the app's Bob-ready prompt generation workflow. |
+| `05-bob-refinement-session.md` | Final refinement session used to improve the project and judging narrative. |
 
 ## Safety Note
 
-Before committing Bob session exports, review them for:
+These exports should contain only safe, submission-ready project material.
+
+Before committing any additional Bob session exports, review them for:
 
 - API keys
 - secrets
@@ -31,4 +40,4 @@ Before committing Bob session exports, review them for:
 - social media data
 - client data
 
-Only safe, submission-ready exports should be committed.
+Only sanitized exports should be committed to this public repository.

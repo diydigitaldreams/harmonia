@@ -1,66 +1,66 @@
 import { Message } from '../types';
 
 /**
- * Synthetic developer support messages for Harmonia demo
- * These are NOT real user data - all messages are manually created for demonstration purposes
+ * Synthetic developer support messages for Harmonia demo.
+ * These are not real user logs. They are manually created demonstration data.
  */
 
 // Cluster 1: Environment Variable Naming Inconsistency
 const envVarMessages: Omit<Message, 'keywords'>[] = [
   {
     id: 'msg-001',
-    content: 'The README says to use DATABASE_URL but my .env.example has DB_CONNECTION_STRING. Which one is correct?',
-    timestamp: new Date('2024-01-15T10:23:00Z'),
-    author: 'dev_alex',
+    content: 'README says to use DATABASE_URL, but .env.example has DB_CONNECTION_STRING. Which one should I use?',
+    timestamp: new Date('2026-05-10T10:23:00Z'),
+    author: 'dev-001',
     channel: 'support'
   },
   {
     id: 'msg-002',
-    content: 'Setup failed because I used DB_CONNECTION_STRING from the example file but the app expects DATABASE_URL',
-    timestamp: new Date('2024-01-15T11:45:00Z'),
-    author: 'sarah_codes',
+    content: 'Setup failed because I copied DB_CONNECTION_STRING from the example file, but the app is looking for DATABASE_URL.',
+    timestamp: new Date('2026-05-10T11:45:00Z'),
+    author: 'dev-002',
     channel: 'onboarding'
   },
   {
     id: 'msg-003',
-    content: 'Documentation is inconsistent about environment variables. README mentions DATABASE_URL, .env.example shows DB_CONNECTION_STRING',
-    timestamp: new Date('2024-01-15T14:12:00Z'),
-    author: 'mike_dev',
+    content: 'The setup docs and example env file disagree on the database variable name.',
+    timestamp: new Date('2026-05-10T14:12:00Z'),
+    author: 'dev-003',
     channel: 'support'
   },
   {
     id: 'msg-004',
-    content: 'Getting "DATABASE_URL is not defined" error even though I copied everything from .env.example',
-    timestamp: new Date('2024-01-16T09:30:00Z'),
-    author: 'jen_builds',
+    content: 'I get "DATABASE_URL is not defined" even after copying the sample .env values.',
+    timestamp: new Date('2026-05-11T09:30:00Z'),
+    author: 'dev-004',
     channel: 'support'
   },
   {
     id: 'msg-005',
-    content: 'The config loader in src/config/database.ts looks for DATABASE_URL but our example file uses a different name',
-    timestamp: new Date('2024-01-16T10:15:00Z'),
-    author: 'code_reviewer_bob',
+    content: 'Looks like the config loader expects DATABASE_URL, while the sample env file uses DB_CONNECTION_STRING.',
+    timestamp: new Date('2026-05-11T10:15:00Z'),
+    author: 'dev-005',
     channel: 'support'
   },
   {
     id: 'msg-006',
-    content: 'New team member spent 2 hours debugging this env var mismatch. Can we standardize the naming?',
-    timestamp: new Date('2024-01-16T15:20:00Z'),
-    author: 'team_lead_chris',
+    content: 'This env var mismatch cost our team time during onboarding. Can we standardize the name?',
+    timestamp: new Date('2026-05-11T15:20:00Z'),
+    author: 'dev-006',
     channel: 'support'
   },
   {
     id: 'msg-007',
-    content: 'I think the issue is in the README at line 47 where it says DATABASE_URL but .env.example line 3 has DB_CONNECTION_STRING',
-    timestamp: new Date('2024-01-17T08:45:00Z'),
-    author: 'detail_oriented_dana',
+    content: 'The README mentions DATABASE_URL, but the example file still shows DB_CONNECTION_STRING.',
+    timestamp: new Date('2026-05-12T08:45:00Z'),
+    author: 'dev-007',
     channel: 'support'
   },
   {
     id: 'msg-008',
-    content: 'This is confusing for onboarding. We should pick one name and use it everywhere',
-    timestamp: new Date('2024-01-17T11:00:00Z'),
-    author: 'onboarding_lead',
+    content: 'For onboarding, we should pick one database env variable name and use it everywhere.',
+    timestamp: new Date('2026-05-12T11:00:00Z'),
+    author: 'dev-008',
     channel: 'onboarding'
   }
 ];
@@ -69,65 +69,65 @@ const envVarMessages: Omit<Message, 'keywords'>[] = [
 const setupMessages: Omit<Message, 'keywords'>[] = [
   {
     id: 'msg-101',
-    content: 'Followed the setup guide but getting "command not found: npm" error',
-    timestamp: new Date('2024-01-14T09:15:00Z'),
-    author: 'new_contributor',
+    content: 'I followed the setup guide but got "command not found: npm" on the first install step.',
+    timestamp: new Date('2026-05-09T09:15:00Z'),
+    author: 'dev-101',
     channel: 'onboarding'
   },
   {
     id: 'msg-102',
-    content: 'The README setup steps don\'t mention installing Node.js. Should that be a prerequisite?',
-    timestamp: new Date('2024-01-14T10:30:00Z'),
-    author: 'setup_helper',
+    content: 'The setup steps do not clearly say that Node.js needs to be installed first.',
+    timestamp: new Date('2026-05-09T10:30:00Z'),
+    author: 'dev-102',
     channel: 'onboarding'
   },
   {
     id: 'msg-103',
-    content: 'npm install works fine but then npm run dev fails with "node: command not found"',
-    timestamp: new Date('2024-01-14T13:45:00Z'),
-    author: 'frustrated_dev',
+    content: 'npm install worked on another machine, but this one fails because node is missing.',
+    timestamp: new Date('2026-05-09T13:45:00Z'),
+    author: 'dev-103',
     channel: 'support'
   },
   {
     id: 'msg-104',
-    content: 'Error message just says "ENOENT" but doesn\'t explain that Node.js 18+ is required',
-    timestamp: new Date('2024-01-15T08:20:00Z'),
-    author: 'error_reporter',
+    content: 'The error only says ENOENT. It should explain that Node.js 18 or newer is required.',
+    timestamp: new Date('2026-05-10T08:20:00Z'),
+    author: 'dev-104',
     channel: 'support'
   },
   {
     id: 'msg-105',
-    content: 'The prerequisites section should list Node.js version requirement more prominently',
-    timestamp: new Date('2024-01-15T09:50:00Z'),
-    author: 'doc_reader',
+    content: 'Node.js version requirements should be more visible before the install command.',
+    timestamp: new Date('2026-05-10T09:50:00Z'),
+    author: 'dev-105',
     channel: 'onboarding'
   },
   {
     id: 'msg-106',
-    content: 'Three people on my team hit this Node.js version issue today. The setup guide needs to be clearer',
-    timestamp: new Date('2024-01-15T14:30:00Z'),
-    author: 'team_manager',
+    content: 'Multiple people hit the Node.js version issue today. The setup guide needs a clearer prerequisite section.',
+    timestamp: new Date('2026-05-10T14:30:00Z'),
+    author: 'dev-106',
     channel: 'support'
   },
   {
     id: 'msg-107',
-    content: 'I upgraded to Node.js 18 and now it works, but this should be in step 1 of the README',
-    timestamp: new Date('2024-01-16T10:00:00Z'),
-    author: 'problem_solver',
+    content: 'After upgrading to Node.js 18, the app started. That requirement should be step one.',
+    timestamp: new Date('2026-05-11T10:00:00Z'),
+    author: 'dev-107',
     channel: 'onboarding'
   },
   {
     id: 'msg-108',
-    content: 'The error message in vite.config.ts could mention checking Node.js version',
-    timestamp: new Date('2024-01-16T11:15:00Z'),
-    author: 'code_inspector',
+    content: 'Could the startup check tell users to verify their Node.js version?',
+    timestamp: new Date('2026-05-11T11:15:00Z'),
+    author: 'dev-108',
     channel: 'support'
   },
   {
     id: 'msg-109',
-    content: 'Maybe add a validation script that checks Node.js version before starting the dev server?',
-    timestamp: new Date('2024-01-16T15:45:00Z'),
-    author: 'automation_fan',
+    content: 'Maybe add a preflight script that checks Node.js before starting the dev server.',
+    timestamp: new Date('2026-05-11T15:45:00Z'),
+    author: 'dev-109',
     channel: 'support'
   }
 ];
@@ -136,84 +136,82 @@ const setupMessages: Omit<Message, 'keywords'>[] = [
 const validationMessages: Omit<Message, 'keywords'>[] = [
   {
     id: 'msg-201',
-    content: 'Getting "Validation failed" error but no details about what field is invalid',
-    timestamp: new Date('2024-01-13T11:20:00Z'),
-    author: 'api_user',
+    content: 'The app says "Validation failed" but does not tell me which field is wrong.',
+    timestamp: new Date('2026-05-08T11:20:00Z'),
+    author: 'dev-201',
     channel: 'support'
   },
   {
     id: 'msg-202',
-    content: 'The API returns 400 with just "invalid input" - can we get more specific error messages?',
-    timestamp: new Date('2024-01-13T14:35:00Z'),
-    author: 'frontend_dev',
+    content: 'The API returns 400 with "invalid input". Can the response include field-level details?',
+    timestamp: new Date('2026-05-08T14:35:00Z'),
+    author: 'dev-202',
     channel: 'support'
   },
   {
     id: 'msg-203',
-    content: 'Users are confused by the generic validation errors. They don\'t know what to fix',
-    timestamp: new Date('2024-01-14T09:00:00Z'),
-    author: 'ux_designer',
+    content: 'Users are confused by generic validation errors because they do not know what to fix.',
+    timestamp: new Date('2026-05-09T09:00:00Z'),
+    author: 'dev-203',
     channel: 'support'
   },
   {
     id: 'msg-204',
-    content: 'The validation logic in src/api/validators.ts should return field-specific error messages',
-    timestamp: new Date('2024-01-14T10:45:00Z'),
-    author: 'backend_dev',
+    content: 'The validator should return the field name and the expected format when input fails.',
+    timestamp: new Date('2026-05-09T10:45:00Z'),
+    author: 'dev-204',
     channel: 'support'
   },
   {
     id: 'msg-205',
-    content: 'Example: instead of "invalid email", say "email must be in format user@domain.com"',
-    timestamp: new Date('2024-01-14T11:30:00Z'),
-    author: 'helpful_dev',
+    content: 'For email errors, it would help to show a valid example instead of only saying invalid email.',
+    timestamp: new Date('2026-05-09T11:30:00Z'),
+    author: 'dev-205',
     channel: 'support'
   },
   {
     id: 'msg-206',
-    content: 'Support tickets are piling up because users can\'t figure out what\'s wrong with their input',
-    timestamp: new Date('2024-01-15T08:15:00Z'),
-    author: 'support_lead',
+    content: 'Support keeps getting tickets from users who cannot tell what is wrong with their form input.',
+    timestamp: new Date('2026-05-10T08:15:00Z'),
+    author: 'dev-206',
     channel: 'support'
   },
   {
     id: 'msg-207',
-    content: 'The error response should include which field failed and what the valid format is',
-    timestamp: new Date('2024-01-15T13:20:00Z'),
-    author: 'api_designer',
+    content: 'The error response should include failed field, reason, and valid format.',
+    timestamp: new Date('2026-05-10T13:20:00Z'),
+    author: 'dev-207',
     channel: 'support'
   },
   {
     id: 'msg-208',
-    content: 'I looked at the code - we\'re using a validation library but not exposing the detailed errors',
-    timestamp: new Date('2024-01-15T15:40:00Z'),
-    author: 'code_archaeologist',
+    content: 'We seem to collect detailed validation errors internally but return only a generic message to the client.',
+    timestamp: new Date('2026-05-10T15:40:00Z'),
+    author: 'dev-208',
     channel: 'support'
   },
   {
     id: 'msg-209',
-    content: 'This affects the user registration form, profile update, and settings pages',
-    timestamp: new Date('2024-01-16T09:25:00Z'),
-    author: 'qa_tester',
+    content: 'This affects registration, profile update, and settings forms.',
+    timestamp: new Date('2026-05-11T09:25:00Z'),
+    author: 'dev-209',
     channel: 'support'
   },
   {
     id: 'msg-210',
-    content: 'Better error messages would reduce support load by at least 30%',
-    timestamp: new Date('2024-01-16T14:50:00Z'),
-    author: 'metrics_analyst',
+    content: 'Clearer validation messages would reduce avoidable support tickets.',
+    timestamp: new Date('2026-05-11T14:50:00Z'),
+    author: 'dev-210',
     channel: 'support'
   }
 ];
 
-// Export all synthetic messages
 export const syntheticMessages = {
   envVarCluster: envVarMessages,
   setupCluster: setupMessages,
   validationCluster: validationMessages
 };
 
-// Combined array of all messages for processing
 export const allSyntheticMessages: Omit<Message, 'keywords'>[] = [
   ...envVarMessages,
   ...setupMessages,

@@ -24,3 +24,9 @@ dist-ssr
 *.sw?
 
 # Made with Bob
+
+# Demo render outputs
+demo/build/
+demo/audio-build/
+*.mp4
+*.wav
